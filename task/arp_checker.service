@@ -1,0 +1,12 @@
+[Unit]
+Description=Check_ARP_cache_for_eth0
+After=network.target
+Wants=arp_checker.timer
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/arp_checker.sh
+#RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
